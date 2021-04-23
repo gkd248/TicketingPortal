@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import ticket from './ticket.png';
 import './App.css';
+import { Link } from 'react-router-dom';
+import history from './history';
+import Routes from './Routes';
 
 function App() {
   return (
@@ -11,9 +14,9 @@ function App() {
 
       <table>
         <tr>
-          <td><button className="buttonGreen" type="submit">Create Event</button></td>
-          <td><button className="buttonBlue" type="submit">Buy Ticket</button></td>
-          <td><button className="buttonRed" type="submit">Something</button></td>
+          <td><button className="buttonGreen" onClick={() => history.push('/CreateEvent')} type="submit">Create Event</button></td>
+          <td><button className="buttonBlue" onClick={() => history.push('/BuyTicket')} type="submit">Buy Ticket</button></td>
+          <td><button className="buttonRed" onClick={() => history.push('/About')} type="submit">Use Ticket</button></td>
         </tr>
         <tr>
           <td><button className="buttonBlack" type="submit">Cancel Event</button></td>
@@ -24,11 +27,15 @@ function App() {
 
       <br></br><br></br>
 
+
+
       <img src={ticket} className="App-logo" alt="logo" />
 
       </header>
     </div>
   );
 }
+
+
 
 export default App;
